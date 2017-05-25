@@ -12,18 +12,24 @@ export class HeroService {
 
   constructor(private http: Http) { }
 
-  // noinspection JSMethodCanBeStatic
+  private handleError = (error: any): Promise<any> => {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
+  };
+
+  create(name: string): Promise<Hero> {
+    return this.http.post(this.heroesUrl, JSON.stringify({ name }), {headers: this.headers})
+               .toPromise()
+               .then(res => res.json().data as Hero)
+               .catch();
+  }
+
   list(): Promise<Hero[]> {
     return this.http.get(this.heroesUrl)
                .toPromise()
                .then(res => res.json().data as Hero[])
                .catch(this.handleError);
   }
-
-  private handleError = (error: any): Promise<any> => {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
-  };
 
   retrieve(id: number): Promise<Hero> {
     const url = `${this.heroesUrl}/${id}`;
