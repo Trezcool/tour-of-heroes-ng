@@ -20,7 +20,7 @@ import { HeroService } from './hero.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1000, apiBase: 'api/'})
+    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })
   ],
   declarations: [AppComponent, DashboardComponent, HeroDetailComponent, HeroesComponent],
   providers: [HeroService],

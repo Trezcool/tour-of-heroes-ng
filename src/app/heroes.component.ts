@@ -22,7 +22,7 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService, private router: Router) { }
 
   ngOnInit(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.list().then(heroes => this.heroes = heroes);
   }
 
   onSelect(hero: Hero): void {
