@@ -46,4 +46,12 @@ export class HeroService {
                .then(() => hero)
                .catch(this.handleError);
   }
+
+  destroy(id: number): Promise<any> {
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.delete(url)
+               .toPromise()
+               .then()
+               .catch(this.handleError);
+  }
 }
