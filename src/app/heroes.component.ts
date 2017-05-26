@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { HeroService } from './hero.service';
-
-
-export interface Hero {
-  id: number;
-  name: string;
-}
+import { Hero, HeroService} from './hero.service';
 
 
 @Component({

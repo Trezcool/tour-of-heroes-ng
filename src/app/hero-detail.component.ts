@@ -3,8 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { Hero } from './heroes.component';
-import { HeroService } from './hero.service';
+import { Hero, HeroService } from './hero.service';
 
 
 @Component({
