@@ -27,7 +27,7 @@ export class HeroService {
     return this.http.post(this.heroesUrl, JSON.stringify({ name }), {headers: this.headers})
                .toPromise()
                .then(res => res.json().data as Hero)
-               .catch();
+               .catch(this.handleError);
   }
 
   list(): Promise<Hero[]> {

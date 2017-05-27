@@ -27,6 +27,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   save(): void {
+    if (!this.hero.name) { return; }
     this.heroService.update(this.hero).then(() => this.goBack());
   }
 

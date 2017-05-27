@@ -15,7 +15,6 @@ import { Hero, HeroService } from './hero.service';
   selector: 'hero-search',
   templateUrl: './hero-search.component.html',
   styleUrls: ['./hero-search.component.css'],
-  providers: [HeroService],
 })
 export class HeroSearchComponent implements OnInit {
   heroes: Observable<Hero[]>;

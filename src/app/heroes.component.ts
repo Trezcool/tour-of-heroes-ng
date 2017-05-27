@@ -12,6 +12,7 @@ import { Hero, HeroService} from './hero.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
   selectedHero: Hero;
+  newHeroName: string;
 
   constructor(private heroService: HeroService, private router: Router) { }
 
@@ -34,6 +35,7 @@ export class HeroesComponent implements OnInit {
     this.heroService.create(name).then(hero => {
       this.heroes.push(hero);
       this.selectedHero = hero;
+      this.newHeroName = '';
     });
   }
 
