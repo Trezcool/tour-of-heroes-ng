@@ -3,7 +3,7 @@
   <div><label>ID: </label>{{hero.id}}</div>
   <div>
     <label>Name: </label>
-    <input [(ngModel)]="hero.name" placeholder="Name" />
+    <input [(ngModel)]="hero.name" placeholder="Name" (keyup.enter)="save()" />
   </div>
   <button (click)="save()">Save</button>
 </div>

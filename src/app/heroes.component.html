@@ -1,7 +1,8 @@
 <h2>My Heroes</h2>
 <div>
-  <label for="name">Hero name:</label> <input [(ngModel)]="newHeroName" id="name" />
-  <button (click)="add(newHeroName)">Add</button>
+  <label for="name">Hero name:</label>
+  <input #heroName id="name" (keyup.enter)="add(heroName.value); heroName.value=''" />
+  <button (click)="add(heroName.value); heroName.value=''">Add</button>
 </div>
 
 <ul class="heroes">
